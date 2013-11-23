@@ -36,8 +36,8 @@ class Plugin(BasePlugin):
         self.mix_fee.setAlignment(Qt.AlignCenter)
         grid.addWidget(self.mix_fee, 5, 3)
         
-    def receive_menu(self, menu, addr):
-        menu.addAction(_("QR code, Via Mixer"), lambda: self.show_qrcode_via_mixer(addr) ) 
+    def receive_menu(self, menu, addrs):
+        menu.addAction(_("QR code, Via Mixer"), lambda: self.show_qrcode_via_mixer(addrs[0]) ) 
         
     def via_mixer(self):
         if not self.is_fee_hook:
